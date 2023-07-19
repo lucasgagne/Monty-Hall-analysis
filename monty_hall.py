@@ -8,7 +8,7 @@ import numpy as np
     Players then have the option to stick with their originally chosen door, or switch doors. 
     
     I will represent the doors as an array of booleans, [False, False, True], where true is the prize door. 
-    The prize door and player door will be randomly selected with uniform probability using the Random library. 
+    The prize door and player door will be randomly selected with uniform probability using the Random library. Graph visualization is with matplotlib library.  
 '''
 def assign_values(doors):
     #Assigns a true value to a random door, returns the index of the true door. 
@@ -37,7 +37,7 @@ def switch_door(player_door, correct_door):
         
 
 def sample_switch_door(repetitions):
-    #Calclulate the proportion of wins given a number of repetitions/ trials
+    #Calclulate the proportion of wins given a number of repetitions/ trials -- assuming that the player has the "switch door" strategy 
     doors = [False, False, False]
 
     outcomes = []
@@ -55,7 +55,7 @@ def sample_switch_door(repetitions):
     return count / len(outcomes)
 
 def sample_keep_door(repetitions):
-    #Calclulate the proportion of wins given a number of repetitions/ trials
+    #Calclulate the proportion of wins given a number of repetitions/ trials -- assuming that the player has the "keep door" strategy 
     some_doors = [False, False, False]
     outcomes = []
     for i in range(repetitions):
